@@ -36,8 +36,9 @@ class SearchContainer extends React.Component {
           this.setState({ valid: false });
         });
     } else if (
-      !_.isEmpty(this.state.zipcode) &&
-      _.isNumber(this.state.zipcode)
+      !_.isEmpty(this.state.zipcode)
+      // &&
+      // _.isNumeric(this.state.zipcode) //TODO: should check that zipcode input is a number for valid input
     ) {
       await fetch(
         `http://api.openweathermap.org/data/2.5/weather?zip=${this.state.zipcode},${this.state.country}&units=${this.state.units}&appid=${apiKey}`
